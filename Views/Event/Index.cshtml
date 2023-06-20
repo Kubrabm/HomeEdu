@@ -33,7 +33,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-event mb-60">
                             <div class="event-img">
-                                <a href="@item.Link">
+                                <a asp-controller="event" asp-action="details" asp-route-id="1">
                                     <img src="~/@item.ImageUrl" alt="event">
                                     <div class="course-hover">
                                         <i class="fa fa-link"></i>
@@ -44,13 +44,13 @@
                                 </div>
                             </div>
                             <div class="event-content text-left">
-                                <h4><a href="@item.Link">@item.Title</a></h4>
+                                <h4><a asp-controller="event" asp-action="details" asp-route-id="1">@item.Title</a></h4>
                                 <ul>
                                     <li><span>time:</span> @item.Time</li>
                                     <li><span>venue</span> @item.Address</li>
                                 </ul>
                                 <div class="event-content-right">
-                                    <a class="default-btn" href="@item.Link">join now</a>
+                                    <a asp-controller="event" asp-action="details" asp-route-id="1">join now</a>
                                 </div>
                             </div>
                         </div>

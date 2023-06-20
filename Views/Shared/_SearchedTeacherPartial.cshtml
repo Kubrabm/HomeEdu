@@ -1,0 +1,12 @@
+﻿@using HomeEdu.DAL.Entities
+@model List<Teacher>
+
+@foreach (var item in Model)
+{
+    <li>
+        <a asp-controller="course" asp-action="detsils" asp-route-id="@item.Id">
+            @item.FullName
+        </a>
+    </li>
+
+}

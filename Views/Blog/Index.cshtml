@@ -41,8 +41,8 @@
                                 <p>By @blog.CreatedBy  /  @blog.Date  /  <i class="fa fa-comments-o"></i>@blog.CommentCount</p>
                             </div>
                             <div class="blog-bottom">
-                                <h2><a href="@blog.Link">@blog.Title </a></h2>
-                                <a href="@blog.Link">read more</a>
+                                <h2><a asp-controller="blog" asp-action="details" asp-route-id="@blog.Id">@blog.Title </a></h2>
+                                <a asp-controller="blog" asp-action="details" asp-route-id="@blog.Id">read more</a>
                             </div>
                         </div>
                     </div>

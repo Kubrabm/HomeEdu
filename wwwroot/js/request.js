@@ -23,3 +23,65 @@ $(document).ready(function () {
     })
 });
 
+/*Search*/
+
+$(documnet).on('keyup', '#input-search', function () {
+
+    var searchedCourseTitle = $(this).val()
+
+    $.ajax({
+        url: '/Course/search?searchedCourseTitle=${searchedCourseTitle}',
+        type: "GET",
+
+        success: function (response) {
+            console.log("hgj");
+            $('#searchedCourseTitle').slice(1);
+            $('#searchedCourseTitle').append(response);
+        },
+
+        error: function (xhr) {
+
+        }
+    })
+})
+
+
+/*Search*/
+
+$(documnet).on('keyup', '#input-search', function () {
+
+    var searchedTeacherName = $(this).val()
+
+    $.ajax({
+        url: '/Course/search?searchedTeacherName=${searchedTeacherName}',
+        type: "GET",
+
+        success: function (response) {
+            console.log("hgj");
+            $('#searchedTeacherName').slice(1);
+            $('#searchedTeacherName').append(response);
+        },
+
+        error: function (xhr) {
+
+        }
+    })
+
+    $(document).on('keyup', '#searchTeachers', function () {
+        var searchedTeacherName = $(this).val()
+
+        $.ajax({
+            url: `/teacher/search?searchedTeacherFullname=${searchedTeacherName}`,
+            type: "GET",
+
+            success: function (response) {
+                $('#searchedTeacher').slice(1)
+                $('#searchedTeacher').append(response)
+            },
+
+            error: function (xhr) {
+
+            }
+        });
+    })
+})
